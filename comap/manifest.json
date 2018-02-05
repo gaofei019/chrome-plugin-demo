@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "美赛报名",
+    "version": "1.0",
+    "description": "美赛报名Chrome扩展",
+    // "icons": "icon.png",
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_title": "美赛报名",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://www.comap.com/*"],
+            "js": ["js/jquery.min.js", "js/jquery.kutil.js", "js/myscript.js"]
+        }
+    ],
+    "permissions": [
+      "*://www.comap.com/*",
+      "notifications",
+      "storage",
+      "cookies"
+    ],
+    "content_security_policy": "script-src 'self'; object-src 'self'"
+}
